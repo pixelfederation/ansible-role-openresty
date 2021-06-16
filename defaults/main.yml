@@ -283,5 +283,6 @@ openresty_allow_deny_block: |
   allow 10.0.0.252/32;
   allow 10.0.0.25/32;
   allow 10.0.0.101/32;
+  allow 10.0.0.253/32;
   allow 127.0.0.1;
   deny all;
