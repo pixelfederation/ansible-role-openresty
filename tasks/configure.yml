@@ -39,6 +39,7 @@
     - "{{ openresty_params }}"
     - "{{ openresty_lua_params }}"
     - "{{ openresty_addtional_params }}"
+    - "{{ openresty_basic_auth_params }}"
 
 - name: Configure nginx sites files
   template:

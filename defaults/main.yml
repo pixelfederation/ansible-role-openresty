@@ -213,6 +213,7 @@ openresty_params:
       {{ openresty_allow_deny_block }}
 
 openresty_addtional_params: []
+openresty_basic_auth_params: []
 
 openresty_default_access_log_format: access_format
 
@@ -279,10 +280,3 @@ openresty_sites_conf: []
 
 openresty_allow_deny_block: |
   access_log 'off';
-  allow 10.0.0.251/32;
-  allow 10.0.0.252/32;
-  allow 10.0.0.25/32;
-  allow 10.0.0.101/32;
-  allow 10.0.0.253/32;
-  allow 127.0.0.1;
-  deny all;
