@@ -12,6 +12,8 @@
     dest: "{{ item.value.certificate }}"
     mode: 0640
   with_dict: "{{ openresty_ssl_files }}"
+  notify:
+    - reload nginx
 
 - name: Copy ssl keys
   copy:
@@ -19,6 +21,8 @@
     dest: "{{ item.value.key }}"
     mode: 0400
   with_dict: "{{ openresty_ssl_files }}"
+  notify:
+    - reload nginx
 
 - name: Copy mime.types file
   copy:
