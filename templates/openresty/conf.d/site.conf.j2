@@ -22,9 +22,15 @@ server {
   ssl_certificate {{ server.ssl.certificate}};
   {% endif %}
 
-  {% for error in _site_error_pages | default([]) %}
+  {% if server.error_pages_override is defined %}
+    {% for error in server.error_pages_override | default([]) %}
   error_page {{ error }};
-  {% endfor %}
+    {% endfor %}
+  {% else %}
+    {% for error in _site_error_pages | default([]) %}
+  error_page {{ error }};
+    {% endfor %}
+  {% endif %}
 
   {% if _site_error_pages_recursive | default(false) %}
   recursive_error_pages on;
