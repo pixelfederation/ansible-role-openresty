@@ -32,7 +32,9 @@ server {
     {% endfor %}
   {% endif %}
 
-  {% if _site_error_pages_recursive | default(false) %}
+  {% if server.error_pages_recursive_override is defined and server.error_pages_recursive_override is sameas true %}
+  recursive_error_pages on;
+  {% elif _site_error_pages_recursive is defined and _site_error_pages_recursive is sameas true and server.error_pages_recursive_override is not defined %}
   recursive_error_pages on;
   {% endif %}
 
