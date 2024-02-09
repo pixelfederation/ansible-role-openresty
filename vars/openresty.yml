@@ -2,7 +2,7 @@
 
 _openresty_repo_url: "deb [arch={{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}] http://openresty.org/package/ubuntu {{ ansible_distribution_release | lower }} main"
 _openresty_repo_key: https://openresty.org/package/pubkey.gpg
-_openresty_package_version: "1.21.4.1-2~{{ ansible_distribution_release }}1"
+_openresty_package_version: "1.25.3.1-2~{{ ansible_distribution_release }}1"
 _openresty_server_pkg: openresty
 _openresty_server_service: openresty
 
