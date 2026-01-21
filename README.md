@@ -271,7 +271,7 @@ Dependencies
 Requires role:
   - name: ansible.systemd-service
     scm: git
-    src: https://github.com/lablabs/ansible-role-systemd-service.git
+    src: https://github.com/pxfd/ansible-role-systemd-service.git
     version: 1.0.0
     path: ./dist
 
