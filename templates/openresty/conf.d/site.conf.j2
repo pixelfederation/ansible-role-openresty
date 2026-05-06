@@ -17,6 +17,10 @@ server {
   {% endif %}
   listen {{ server.listen.port }} {% if server.listen.options is defined %}{{ server.listen.options }}{% endif %} {% if server.ssl is defined %}ssl{% endif %};
 
+  {% for directive in server.directives | default([]) %}
+  {{ directive }};
+  {% endfor %}
+
   {% if server.ssl is defined %}
   ssl_certificate_key {{ server.ssl.key }};
   ssl_certificate {{ server.ssl.certificate}};

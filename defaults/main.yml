@@ -66,7 +66,7 @@ openresty_main_template:
   global_conf:
     user: "{{ openresty_server_user }}"
     worker_processes: auto
-    #worker_rlimit_nofile: 1024
+    worker_rlimit_nofile: 60000
     error_log: "{{ openresty_error_log_path }} {{ openresty_error_log_level }}"
     pid: "{{ openresty_pid_file }}"
   event_conf:
@@ -82,6 +82,9 @@ openresty_main_template:
     default_type:  application/octet-stream
     keepalive_timeout: 65
     access_log: 'off'
+
+    variables_hash_max_size: 2048
+    variables_hash_bucket_size: 128
 
     sendfile: 'on'
     tcp_nopush: 'on'
